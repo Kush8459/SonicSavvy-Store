@@ -1,3 +1,4 @@
+import { REACT_APP_DEV_URL } from "../../../utils/urls";
 import "./Category.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -13,10 +14,7 @@ const Category = ({ categories }) => {
             onClick={() => navigate(`/category/${item.id}`)}
           >
             <img
-              src={
-                process.env.REACT_APP_DEV_URL +
-                item.attributes.img.data.attributes.url
-              }
+              src={REACT_APP_DEV_URL + item.attributes.img.data.attributes.url}
               alt=""
             />
           </div>

@@ -1,3 +1,4 @@
+import { REACT_APP_DEV_URL } from "../../../utils/urls";
 import "./Product.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +8,7 @@ const Product = ({ id, data }) => {
     <div className="product-card" onClick={() => navigate(`/product/${id}`)}>
       <div className="thumbnail">
         <img
-          src={process.env.REACT_APP_DEV_URL + data.img.data[0].attributes.url}
+          src={REACT_APP_DEV_URL + data.img.data[0].attributes.url}
           alt=""
         />
       </div>

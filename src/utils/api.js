@@ -1,17 +1,15 @@
 import axios from "axios";
+import { REACT_APP_DEV_URL, REACT_APP_STRIPE_APP_KEY } from "./urls";
 
 const params = {
   headers: {
-    Authorization: "bearer " + process.env.REACT_APP_STRIPE_APP_KEY,
+    Authorization: "bearer " + REACT_APP_STRIPE_APP_KEY,
   },
 };
 
 export const fetchDataFromApi = async (url) => {
   try {
-    const { data } = await axios.get(
-      process.env.REACT_APP_DEV_URL + url,
-      params
-    );
+    const { data } = await axios.get(REACT_APP_DEV_URL + url, params);
     return data;
   } catch (error) {
     console.log(error);
@@ -20,8 +18,8 @@ export const fetchDataFromApi = async (url) => {
 };
 
 export const makePaymentRequest = axios.create({
-  baseURL: process.env.REACT_APP_DEV_URL,
+  baseURL: REACT_APP_DEV_URL,
   headers: {
-    Authorization: "bearer " + process.env.REACT_APP_STRIPE_APP_KEY,
+    Authorization: "bearer " + REACT_APP_STRIPE_APP_KEY,
   },
 });

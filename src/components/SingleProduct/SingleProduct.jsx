@@ -13,6 +13,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { useContext, useState } from "react";
 import { Context } from "../../utils/context";
+import { REACT_APP_DEV_URL } from "../../utils/urls";
 
 const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);
@@ -43,7 +44,7 @@ const SingleProduct = () => {
           <div className="left">
             <img
               src={
-                process.env.REACT_APP_DEV_URL +
+                REACT_APP_DEV_URL +
                 product.img.data[0].attributes.url
               }
               alt=""

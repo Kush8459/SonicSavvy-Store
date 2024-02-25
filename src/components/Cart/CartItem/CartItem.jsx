@@ -3,6 +3,7 @@ import { Context } from "../../../utils/context";
 import { MdClose } from "react-icons/md";
 import prod from "../../../assets/products/earbuds-prod-1.webp";
 import "./CartItem.scss";
+import { REACT_APP_DEV_URL } from "../../../utils/urls";
 
 const CartItem = () => {
   const { cartItems, handleRemoveFromCart, handleCartProductQuantity } =
@@ -14,7 +15,7 @@ const CartItem = () => {
           <div className="image-container">
             <img
               src={
-                process.env.REACT_APP_DEV_URL +
+                REACT_APP_DEV_URL +
                 item.attributes.img.data[0].attributes.url
               }
               alt=""

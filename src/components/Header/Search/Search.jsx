@@ -4,6 +4,7 @@ import prod from "../../../assets/products/earbuds-prod-1.webp";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
+import { REACT_APP_DEV_URL } from "../../../utils/urls";
 
 const Search = ({ setShowSearch }) => {
   const [query, setQuery] = useState("");
@@ -47,7 +48,7 @@ const Search = ({ setShowSearch }) => {
               <div className="image-container">
                 <img
                   src={
-                    process.env.REACT_APP_DEV_URL +
+                    REACT_APP_DEV_URL +
                     item.attributes.img.data[0].attributes.url
                   }
                   alt=""
